@@ -1,9 +1,12 @@
-import "./App.css";
+import "./Styles/App.css";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Main />
+      <Footer />
     </div>
   );
 };
