@@ -17,12 +17,15 @@ const Main = () => {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [disabled, setDisabled] = useState(false);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: uniqid() }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -31,8 +34,14 @@ const Main = () => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
+  // start game on page load
+  useEffect(() => {
+    shuffleCards();
+  }, []);
+
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -50,12 +59,11 @@ const Main = () => {
     }
   }, [choiceOne, choiceTwo]);
 
-  console.log(cards);
-
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurns) => prevTurns + 1);
+    setDisabled(false);
   };
 
   return (
@@ -67,10 +75,14 @@ const Main = () => {
             card={card}
             handleChoice={handleChoice}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
+            disabled={disabled}
           />
         ))}
       </div>
-      <button onClick={shuffleCards}>New Game</button>
+      <div className="score-wrapper">
+        <button onClick={shuffleCards}>New Game</button>
+        <p>Turns: {turns}</p>
+      </div>
     </div>
   );
 };

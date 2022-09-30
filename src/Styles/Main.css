@@ -14,6 +14,14 @@
   grid-gap: 1.25rem;
 }
 
+.score-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
 button {
   color: var(--yellow);
   background: var(--brown);
@@ -21,6 +29,7 @@ button {
   border-radius: 0.25rem;
   font-size: 1.25rem;
   padding: 0.625rem;
+  height: 3.5rem;
   width: 15rem;
   cursor: pointer;
 }
