@@ -4,7 +4,7 @@ A React App to test your memory skills!
 
 **Link to project:** [Live Preview](https://trroev.github.io/memory-game/)
 
-![page preview image](/public/images/memory-game-screenshot.png)
+![page preview image](/src/images/memory-game-screenshot.png)
 
 ## How It's Made:
 
