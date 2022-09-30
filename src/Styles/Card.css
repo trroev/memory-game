@@ -4,7 +4,22 @@
 
 .card img {
   width: 100%;
+  height: 100%;
   display: block;
-  border: 2px solid #fff;
+  border: 2px solid var(--brown);
   border-radius: 0.25rem;
+}
+
+.card .card-front {
+  transform: rotateY(90deg);
+  position: absolute;
+  background: var(--yellow);
+}
+
+.card .card-back {
+  background: var(--orange);
+}
+
+.flipped .card-front {
+  transform: rotateY(0deg);
 }

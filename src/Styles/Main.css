@@ -1,6 +1,26 @@
+.main {
+  padding: 0 2rem;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-grid {
-  margin-top: 2.5rem;
+  margin: 2rem 0 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1.25rem;
+}
+
+button {
+  color: var(--yellow);
+  background: var(--red);
+  border: 2px solid var(--red);
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  padding: 0.625rem;
+  width: 15rem;
+  cursor: pointer;
 }

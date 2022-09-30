@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
+import "../Styles/Footer.css";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <a href="https://github.com/trroev">
           <FaGithub
             style={{
-              fill: "#d67215",
+              fill: "#42282e",
               verticalAlign: "bottom",
               fontSize: "1.5rem",
               marginLeft: "0.5rem",

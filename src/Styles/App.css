@@ -6,6 +6,7 @@
   --beige: #d9cfb0;
   --orange: #dc9b74;
   --red: #d6665a;
+  --yellow: #f0d267;
 }
 
 *,
@@ -20,6 +21,12 @@ body {
   margin: 0;
   font-size: 1.5em;
   text-align: center;
+  color: var(--yellow);
   background: var(--green);
-  color: #fff;
+}
+
+.App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }

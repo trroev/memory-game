@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
 import Card from "./Card";
 import "../Styles/Main.css";
 
 const cardImages = [
-  { src: "/images/oyster.png" },
-  { src: "/images/sushi.png" },
-  { src: "/images/uni.png" },
-  { src: "/images/wagyu.png" },
+  { src: "/images/oyster.png", matched: false },
+  { src: "/images/sushi.png", matched: false },
+  { src: "/images/uni.png", matched: false },
+  { src: "/images/wagyu.png", matched: false },
+  { src: "/images/abalone.png", matched: false },
+  { src: "/images/unagi.png", matched: false },
 ];
 
 const Main = () => {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -23,18 +27,51 @@ const Main = () => {
     setTurns(0);
   };
 
-  console.log(cards, turns);
+  const handleChoice = (card) => {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  };
+
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) {
+        setCards((prevCards) => {
+          return prevCards.map((card) => {
+            if (card.src === choiceOne.src) {
+              return { ...card, matched: true };
+            } else {
+              return card;
+            }
+          });
+        });
+        resetTurn();
+      } else {
+        resetTurn();
+      }
+    }
+  }, [choiceOne, choiceTwo]);
+
+  console.log(cards);
+
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns((prevTurns) => prevTurns + 1);
+  };
 
   return (
-    <>
-      <h1>Memory Game</h1>
-      <button onClick={shuffleCards}>New Game</button>
+    <div className="main">
       <div className="card-grid">
         {cards.map((card) => (
-          <Card key={card.id} card={card} />
+          <Card
+            key={card.id}
+            card={card}
+            handleChoice={handleChoice}
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+          />
         ))}
       </div>
-    </>
+      <button onClick={shuffleCards}>New Game</button>
+    </div>
   );
 };
 
