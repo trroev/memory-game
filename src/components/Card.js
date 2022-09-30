@@ -1,4 +1,5 @@
 import React from "react";
+import honeycomb from "../images/honeycomb.png";
 import "../Styles/Card.css";
 
 const Card = ({ card, handleChoice, flipped, disabled }) => {
@@ -14,7 +15,7 @@ const Card = ({ card, handleChoice, flipped, disabled }) => {
         <img className="card-front" src={card.src} alt="card front" />
         <img
           className="card-back"
-          src="/images/honeycomb.png"
+          src={honeycomb}
           alt="card back"
           onClick={handleClick}
         />

@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
 import Card from "./Card";
+import oyster from "../images/oyster.png";
+import sushi from "../images/sushi.png";
+import uni from "../images/uni.png";
+import wagyu from "../images/wagyu.png";
+import abalone from "../images/abalone.png";
+import unagi from "../images/unagi.png";
 import "../Styles/Main.css";
 
 const cardImages = [
-  { src: "/images/oyster.png", matched: false },
-  { src: "/images/sushi.png", matched: false },
-  { src: "/images/uni.png", matched: false },
-  { src: "/images/wagyu.png", matched: false },
-  { src: "/images/abalone.png", matched: false },
-  { src: "/images/unagi.png", matched: false },
+  { src: oyster, matched: false },
+  { src: sushi, matched: false },
+  { src: uni, matched: false },
+  { src: wagyu, matched: false },
+  { src: abalone, matched: false },
+  { src: unagi, matched: false },
 ];
 
 const Main = () => {
