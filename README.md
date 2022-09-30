@@ -4,7 +4,7 @@ A React App to test your memory skills!
 
 **Link to project:** [Live Preview](https://trroev.github.io/memory-game/)
 
-![page preview image](/public/preview-screenshot.png)
+![page preview image](/public/images/memory-game-screenshot.png)
 
 ## How It's Made:
 
@@ -25,3 +25,5 @@ npm start
 ```
 
 ## Lessons Learned:
+
+This was a fun app to build to get more familiar with hooks, especially useEffect. I learned that it seems a little easier to create css style components as well, rather than one large css file. Using logical comparisons in a prop and also a ternary operator for a jsx className were both new to me as well.
