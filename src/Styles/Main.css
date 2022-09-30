@@ -8,7 +8,7 @@
 }
 
 .card-grid {
-  margin: 2rem 0 3rem;
+  margin: 0 0 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1.25rem;
@@ -16,8 +16,8 @@
 
 button {
   color: var(--yellow);
-  background: var(--red);
-  border: 2px solid var(--red);
+  background: var(--brown);
+  border: 2px solid var(--brown);
   border-radius: 0.25rem;
   font-size: 1.25rem;
   padding: 0.625rem;
