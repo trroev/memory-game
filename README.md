@@ -19,7 +19,7 @@ A React App to test your memory skills!
 
 ```
 git clone https://github.com/trroev/memory-game.git
-cd resume-app
+cd memory-game
 npm install
 npm start
 ```
